@@ -1,0 +1,33 @@
+@model BasicWebApp.Services.MetMumbaiDbContext
+<html>
+    <head>
+        <title>BasicWebApp</title>
+    </head>
+    <body>
+       
+        <center>
+        <h1>Course Table</h1>
+
+        <table border="2">
+            <tr>
+                <th>Course Id</th>
+                <th>Course Name</th>
+                <th>Course Fees</th>
+                <th>Duration</th>     
+                <th>View Details</th>
+            </tr>
+            @foreach (var entry in Model.Courses)
+            {
+                <tr>
+                    <td>@entry.Id</td>
+                    <td>@entry.CourseName</td>
+                    <td>@entry.Fees</td>
+                    <td>@entry.Duration</td>
+                    <td><a href="Detail/Details/@entry.Id">details</a></td>
+                </tr>
+            }
+        </table>
+        </center>
+         
+    </body>
+</html>
